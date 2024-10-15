@@ -1,10 +1,4 @@
-try:
-    import scratchattach as sa
-except ModuleNotFoundError:
-    import os
-
-    os.system("pip install scratchattach")
-    import scratchattach as sa
+import scratchattach as sa
 import json
 import sys
 
