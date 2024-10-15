@@ -79,12 +79,12 @@ def on_ready():
 #     thread=False,
 # )  # Make sure this is ALWAYS at the bottom of your Python file!
 def run():
-    while True:
-        try:
-            events.start()
-        except IndexError as e:
-            print(e)
-            continue
+    # while True:
+    #     try:
+    events.start()
+    # except IndexError as e:
+    #     print(e)
+    #     continue
 
 
 # input("Press enter to stop: ")
