@@ -3,14 +3,17 @@ import json
 import sys
 
 import cloud
+import os
+
+# print()
 
 with open("password.txt", "r") as file:
     password = file.read()
-session = sa.Session(password, username="thedavidh")
+session = sa.login("thedavidh", os.environ["SCRATCH_PASSWORD"])
 project_id = "985046953"  # "1049516445"
-conn: sa.CloudConnection = session.connect_cloud(project_id)
+conn: sa.BaseCloud = session.connect_scratch_cloud(project_id)
 # events = cloud.events()
-events = sa.CloudEvents(project_id)
+events = conn.events()
 
 handled = []
 
@@ -85,4 +88,4 @@ def run():
 
 # input("Press enter to stop: ")
 # sys.exit()
-# run()
+run()
